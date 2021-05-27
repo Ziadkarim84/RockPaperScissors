@@ -55,6 +55,7 @@ startGameBtn.addEventListener('click', function(){
 
 
 //infinite arguments different ways
+//*************************************
 
 function infiniteArgumnets(...num){
     for(const i of num){
@@ -68,4 +69,22 @@ function infiniteArgumnets2(){
         console.log(i);
     }
 }
-infiniteArgumnets2(1,2,3,4,5,6,7,8);
+//infiniteArgumnets2(1,2,3,4,5,6,7,8);
+
+
+
+
+//functions within a function(only available within the scope of that function)
+/*****************************/
+
+
+function addNumbers(a,b){
+    function validate(num){
+        return isNaN(num) ? 0 : num;
+    }
+
+    let sum = validate(a) + validate(b);
+    console.log(sum)
+}
+
+addNumbers('asf',6);

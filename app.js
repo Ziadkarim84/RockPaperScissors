@@ -52,3 +52,20 @@ startGameBtn.addEventListener('click', function(){
     console.log(`Player: ${playerSelection}\nComputer: ${computerSelection}\nResult: ${result}`);
     gameSelected = false;
 });
+
+
+//infinite arguments different ways
+
+function infiniteArgumnets(...num){
+    for(const i of num){
+        console.log(i);
+    }
+}
+//infiniteArgumnets(1,2,3,4,5,6,7,8);
+
+function infiniteArgumnets2(){
+    for(const i of arguments){ //arguments doesnt work in arrow functions
+        console.log(i);
+    }
+}
+infiniteArgumnets2(1,2,3,4,5,6,7,8);

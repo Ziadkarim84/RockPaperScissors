@@ -102,4 +102,23 @@ const printResult = (result) => {
     console.log(`the result is ${result}`);
 }
 
-add(printResult,5,6);
+//add(printResult,5,6);
+
+/************bind function**************/
+
+function addForBind(callBackFn,a,b){
+    sum = a+b;
+    callBackFn(sum);
+}
+function subtractForBind(callBackFn,a,b){
+    sum = a-b;
+    callBackFn(sum);
+}
+
+const showResult = (message,result) => {
+    console.log(`${message} : ${result}`);
+}
+
+addForBind(showResult.bind(this,"ADD"),5,10);
+subtractForBind(showResult.bind(this,"Subtract"), 10, 5);
+

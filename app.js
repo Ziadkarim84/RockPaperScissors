@@ -8,7 +8,7 @@ const RESULT_PLAYER_WIN = "PLAYER WINS!";
 const RESULT_COMPUTER_WIN = "COMPUTER WINS!";
 let gameSelected = false;
 
-function getPlayerSelection(){
+getPlayerSelection = () => {
     let selection = prompt(`Please enter your choice : \n${ROCK},\n${PAPER},\n${SCISSORS}`,"").toUpperCase();
     if(!(selection == ROCK || selection == PAPER || selection == SCISSORS)){
         alert(`Wrong selection. we choose ${DEFAULTSELECTION} for you`);
@@ -18,7 +18,7 @@ function getPlayerSelection(){
     return selection;
 }
 
-function getComputerSelection(){
+getComputerSelection = () => {
     let selection = Math.random();
     if(selection < 0.34){
         return ROCK;
@@ -29,7 +29,7 @@ function getComputerSelection(){
     }
 }
 
-function getResult(player,computer){
+getResult = (player,computer) => {
     if(player == computer){
         return RESULT_DRAW;
     } else if(player == ROCK && computer == SCISSORS || player == PAPER && computer == ROCK || player == SCISSORS && computer == PAPER){

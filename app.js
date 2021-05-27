@@ -54,8 +54,8 @@ startGameBtn.addEventListener('click', function(){
 });
 
 
-//infinite arguments different ways
-//*************************************
+
+/***************infinite arguments different ways**********************/
 
 function infiniteArgumnets(...num){
     for(const i of num){
@@ -74,8 +74,8 @@ function infiniteArgumnets2(){
 
 
 
-//functions within a function(only available within the scope of that function)
-/*****************************/
+
+/**************functions within a function(only available within the scope of that function***************/
 
 
 function addNumbers(a,b){
@@ -87,4 +87,19 @@ function addNumbers(a,b){
     console.log(sum)
 }
 
-addNumbers('asf',6);
+//addNumbers('asf',6);
+
+
+
+/************Callback function**************/
+
+function add(callBackFn,a,b){
+    sum = a+b;
+    callBackFn(sum);
+}
+
+const printResult = (result) => {
+    console.log(`the result is ${result}`);
+}
+
+add(printResult,5,6);
